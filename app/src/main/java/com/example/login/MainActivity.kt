@@ -7,6 +7,7 @@ import android.view.View
 import android.widget.Button
 import android.widget.LinearLayout
 import android.widget.TextView
+import org.w3c.dom.Text
 
 
 class MainActivity : AppCompatActivity() {
@@ -37,5 +38,24 @@ class MainActivity : AppCompatActivity() {
         signIn.setOnClickListener{
             startActivity(Intent(this@MainActivity,NewActivity::class.java))
         }
+
+        }
+    fun Lazy(){
+        LazyColumn {
+            // Add a single item
+            item {
+                Text(text = "placeholder")
+            }
+            item {
+                Text(text = "placeholder 2")
+            }
+            }
+        }
+    private fun item(function: () -> Unit) {
     }
 }
+class LazyColumn(function: () -> Unit) {
+}
+
+
+
