@@ -17,7 +17,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="45dp"
-        android:textStyle="bold|normal|italic|"
+        android:textStyle="bold|normal|italic"
         android:textColor="@color/white"></TextView>
         <androidx.cardview.widget.CardView
             app:cardCornerRadius="25dp"
@@ -41,25 +41,27 @@
                     android:layout_marginTop="30dp"
                     android:layout_marginStart="20dp"
                     android:layout_marginEnd="20dp"
+                    android:background="@drawable/switch_tumbs"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
+
                     <TextView
                         android:id="@+id/logIn"
-                        android:text="Log in"
-                        android:gravity="center"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
                         android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:background="@drawable/switch_trcks"
+                        android:gravity="center"
+                        android:paddingLeft="15dp"
                         android:paddingTop="5dp"
+                        android:paddingRight="15dp"
+                        android:paddingBottom="5dp"
+                        android:text="Log in"
                         android:textAlignment="center"
                         android:textColor="#FFFFFF"
                         android:textSize="16sp"
-                        android:paddingRight="15dp"
-                        android:paddingLeft="15dp"
-                        android:paddingBottom="5dp"
-                        android:textStyle="bold|normal"
-                        android:background="@drawable/switch_trcks"
-                        android:layout_weight="1"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"/>
+                        android:textStyle="bold|normal" />
                     <TextView
                         android:id="@+id/signUp"
                         android:text="Sign up"
@@ -94,13 +96,13 @@
                         android:layout_marginRight="5dp"
                         android:layout_marginTop="5dp"
                         app:shapeAppearanceOverlay="@style/Button4"
-                        app:boxStrokeColor="#4E4A4A"
+                        app:boxStrokeColor="#FFFFFF"
                         app:boxStrokeWidth="1dp"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent">
 
                         <com.google.android.material.textfield.TextInputEditText
-                            android:inputType="textPersonName|textEmailAddress"
+                            android:inputType="textEmailAddress"
                             android:id="@+id/email"
                             android:ems="10"
                             android:textSize="13sp"
@@ -144,6 +146,90 @@
                     </TextView>
 
                 </LinearLayout>
+                <LinearLayout
+                    android:id="@+id/sign"
+                    android:background="@color/white"
+                    android:padding="25dp"
+                    android:visibility="gone"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:hint="Email"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginRight="5dp"
+                        android:layout_marginTop="5dp"
+                        app:shapeAppearanceOverlay="@style/Button4"
+                        app:boxStrokeColor="#FFFFFF"
+                        app:boxStrokeWidth="1dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:inputType="textPersonName|textEmailAddress"
+                            android:id="@+id/emails"
+                            android:ems="10"
+                            android:textSize="13sp"
+                            android:textColor="@color/black"
+                            android:textStyle="normal"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            />
+                    </com.google.android.material.textfield.TextInputLayout>
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:hint="Password"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginRight="5dp"
+                        android:layout_marginTop="5dp"
+                        app:shapeAppearanceOverlay="@style/Button4"
+                        app:boxStrokeColor="#4E4A4A"
+                        app:boxStrokeWidth="1dp"
+                        app:endIconMode="password_toggle"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:inputType="textPassword"
+                            android:id="@+id/passwords1"
+                            android:ems="10"
+                            android:textSize="13sp"
+                            android:textColor="@color/black"
+                            android:textStyle="normal"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            />
+                    </com.google.android.material.textfield.TextInputLayout>
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:hint="Confirm password"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginRight="5dp"
+                        android:layout_marginTop="5dp"
+                        app:shapeAppearanceOverlay="@style/Button4"
+                        app:boxStrokeColor="#4E4A4A"
+                        app:boxStrokeWidth="1dp"
+                        app:endIconMode="password_toggle"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:inputType="textPassword"
+                            android:id="@+id/passwords2"
+                            android:ems="10"
+                            android:textSize="13sp"
+                            android:textColor="@color/black"
+                            android:textStyle="normal"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+
+                </LinearLayout>
                 <Button
                     android:id="@+id/signIn"
                     android:text="Log in"
@@ -153,12 +239,15 @@
                     android:gravity="center"
                     android:layout_marginStart="24dp"
                     android:layout_marginEnd="24dp"
-                    android:textColor="@color/textColor"
+                    android:textColor="#FFFFFF"
                     android:layout_gravity="center"
                     app:shapeAppearanceOverlay="@style/Button5"
                     android:backgroundTint="@color/pinkColor"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
 
             </LinearLayout>
         </androidx.cardview.widget.CardView>
